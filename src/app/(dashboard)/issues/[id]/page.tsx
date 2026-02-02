@@ -61,7 +61,7 @@ export default function IssueDetailsPage({ params }: { params: Promise<{ id: str
                     </div>
 
                     <div className="pt-8 border-t border-white/10">
-                        <CommentsSection />
+                        <CommentsSection issueId={id} />
                     </div>
                 </div>
 
@@ -94,3 +94,4 @@ export default function IssueDetailsPage({ params }: { params: Promise<{ id: str
         </div>
     )
 }
+
