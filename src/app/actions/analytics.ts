@@ -63,7 +63,7 @@ export async function getDashboardStats() {
 
     const latestReported = issues.find(i => i.status === 'reported')
     if (latestReported) {
-        const reporterName = (latestReported.profiles as { full_name: string })?.full_name || 'Student'
+        const reporterName = latestReported.profiles?.[0]?.full_name || 'Student'
         recentActivity.push({
             id: latestReported.id,
             action: `New Issue Reported`,
@@ -113,4 +113,5 @@ export async function getDashboardStats() {
             responseTime: responseTimeTrend
         }
     }
+
 }
